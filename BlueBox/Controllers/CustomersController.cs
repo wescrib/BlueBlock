@@ -28,6 +28,7 @@ namespace BlueBox.Controllers
             return list;
         }
 
+        [Route("Movies/Customer/{id}")]
         public ActionResult OneCustomer(int id)
         {
             Customer cus = ViewCustomers().SingleOrDefault(c => c.Id == id);
