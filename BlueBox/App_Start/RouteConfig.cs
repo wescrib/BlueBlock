@@ -12,7 +12,14 @@ namespace BlueBox
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
+            routes.MapRoute(
+                "FindCustomer",
+                "customers/OneCustomer/{id}",
+                new
+                {
+                    controller = "CustomersController",
+                    action = "OneCustomer"
+                });
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

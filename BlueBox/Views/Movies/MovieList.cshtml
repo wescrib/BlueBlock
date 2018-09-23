@@ -1,0 +1,31 @@
+﻿@model IEnumerable<BlueBox.Models.Movies>
+@{
+	ViewBag.Title = "MovieList";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>All Movies</h2>
+
+@if (!Model.Any())
+{
+	<p>There are no movies to display</p>
+}
+else
+{
+<table>
+	<thead>
+		<tr>
+			<th>Movies</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var movie in Model)
+		{
+			<tr>
+				<td>@movie.Title</td>
+			</tr>
+		}
+	</tbody>
+</table>
+
+}
